@@ -21,5 +21,11 @@ public class AdminController {
 		return "admin/index";
 	}
 	
+	@RequestMapping("articles")
+	public String articles() {
+		return "admin/article/list";
+	}
+	
+
 
 }	
