@@ -12,7 +12,7 @@ public class UserController {
 	//httpxxxx://user/hello
 	@RequestMapping(value="hello",method=RequestMethod.GET)
 	public String tet(HttpServletRequest request) {
-		request.setAttribute("info", "hello");
+		request.setAttribute("info", "来啦，老弟");
 		return "user/test";
 	}
 }
