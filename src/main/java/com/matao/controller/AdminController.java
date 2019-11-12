@@ -26,6 +26,9 @@ public class AdminController {
 		return "admin/article/list";
 	}
 	
-
+	@RequestMapping("users")
+	public String users(@RequestParam(defaultValue="") String name) {
+		return "admin/user/list";
+	}
 
 }	
