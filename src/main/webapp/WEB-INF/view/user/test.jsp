@@ -5,11 +5,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/resource/bootstrap/css/bootstrap.css" rel="stylesheet">
+<script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/resource/bootstrap/js/bootstrap.js"></script>
 <title>Insert title here</title>
-<link href="<%=request.getContextPath()%>/css/css.css" rel="stylesheet">
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.8.2.min.js"></script>
 </head>
 <body>
-	hello
+	${info}
+	<!-- 布局两端会留有间距 -->
+	<div class="container" style="background:gray">
+		container
+	</div>
+	<!--  固定宽度的布局换成100%的布局-->
+	<div class="container-fluid" style="background:rgb(20%,30%,70%)">
+		container-fluid
+		<div class="row">
+			<div class="col-md-4" style="height:300px; background:url(/resource/images/1.jpg) no-repeat"></div>
+			<div class="col-md-2" style="height:300px; background:url(/resource/images/2.jpg) no-repeat"></div>
+			<div class="col-md-6" style="height:300px">
+				<div class="col0-md-4" style="backgroud:rgb(30%,30%,40%)"> 
+					<h1>第一个标题</h1>
+				</div>
+				<div class="col-md-4" style="background:rgb(60%,30%,10%)">
+     					<h2>  第二个标题  </h2>
+     			</div>
+     			<div class="col-md-4" style="background:rgb(0%,30%,70%)">
+     					<h5>  第三个标题  </h5>
+     			</div>
+			</div>
+		</div>
+
+	</div>
+	
 </body>
 </html>
