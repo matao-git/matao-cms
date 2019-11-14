@@ -28,7 +28,7 @@ import com.matao.service.UserService;
 public class AdminController {
 	@Autowired
 	private UserService service;
-	
+	 
 	@RequestMapping("index")
 	public String index() {
 		return "admin/index";
@@ -45,6 +45,7 @@ public class AdminController {
 			@RequestParam(defaultValue="1") Integer page) {
 			 PageInfo<User> userPage = service.getPageList(name,page);
 			request.setAttribute("info",userPage);
+			request.setAttribute("name",name);
 		return "/admin/user/list";
 	}
 	

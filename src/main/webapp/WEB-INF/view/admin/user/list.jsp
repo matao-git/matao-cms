@@ -22,6 +22,11 @@
 				}
 			},"json")
 	}
+	
+	function search(){
+		$("#content").load("/admin/users?name=" +$("#searchName").val());
+	}
+	
 </script>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -31,9 +36,9 @@
     <div>
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" id="searchName" value="${name }" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-default">查询</button>
+           		<input type="button" class="btn btn-default" onclick="search()" value="查询">
         </form>
     </div>
     </div>
@@ -94,15 +99,26 @@
     </tbody>
   </table>
 </div>
-<ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul>
-    
+
+  <ul class="pagination">
+    <li>
+      <a href="javascript:goPage(${info.prePage})" >&laquo;</a>
+    </li>
+    <c:forEach begin="${info.pageNum - 2 > 1? info.pageNum - 2 : 1}" end="${info.pageNum + 2 > info.pages? info.pages : info.pageNum + 2}" varStatus="index">
+    <c:if test="${info.pageNum!=index.index}">
+    	<li><a href="javascropt:goPgae(${index.index})">${index.index }</a></li>
+    </c:if>
+    <c:if test="${info.pageNum==index.index}">
+    		<li><a href="javascript:void"><strong> ${index.index} </strong> </a></li>
+    </c:if>
+    </c:forEach>
+   <li><a href="javascript:goPage(${info.nextPage})">&raquo;</a></li>
+  </ul>
+    <script type="text/javascript">
+    	function goPage(page) {
+			var url = "/admin/users?page="+page+"&name=${name}";
+			$("#content").load(url);
+		}
+    </script>
 </body>
 </html>

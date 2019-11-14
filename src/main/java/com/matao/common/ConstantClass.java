@@ -17,5 +17,5 @@ public class ConstantClass {
 	 */
 	public static final int USER_ROLE_ADMIN=1;
 	
-	public static final int PAGE_SIZE=1;
+	public static final int PAGE_SIZE=3;
 }
