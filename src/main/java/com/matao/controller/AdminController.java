@@ -39,6 +39,10 @@ public class AdminController {
 		return "/admin/article/list";
 	}
 	
+	@RequestMapping("index_bak")
+	public String index_bak() {
+		return "/admin/index_bak";
+	}
 	@RequestMapping("users")
 	public String users(@RequestParam(defaultValue="") String name,
 			HttpServletRequest request,
