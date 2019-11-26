@@ -10,16 +10,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<!-- 查询user列表 -->
-	<select id="list" resultMap="userMapper">
+		<select id="list" resultMap="userMapper">
 		SELECT * FROM cms_user 
 		<where>
-			<if test="name !=null and name !=''">
-				and username like concat('%',#{name},'%')
+			<if test=' value!=null and  value!="" '>
+				AND username LIKE concat('%',#{value},'%')
 			</if>
 		</where>
 	</select>
 	
-	<select id="getUserById" resultMap="userMapper">
+	<select id="getById" resultMap="userMapper">
 		select * from cms_user where id =#{value}
 	</select>
+	
+	<select id="findUserById" resultMap="userMapper">
+		select * from cms_user where id = ${value}
+	</select>
+	
+	<insert id="add">
+		INSERT INTO cms_user(username,password,nickname,birthday
+                           ,gender,locked,create_time,update_time,url,score,role) 
+		      values(#{username},#{password},#{nickname},#{birthday},
+		       #{gender},0,now(),now(),'',0,#{role}) 
+	</insert>
 </mapper>

@@ -6,7 +6,6 @@ import java.io.Serializable;
     * @ClassName: MsgResult
     * @Description: 用于前后端交互的协议
     * @author 马涛
-    * @date 2019年11月13日
     *
  */
 public class MsgResult implements Serializable{
