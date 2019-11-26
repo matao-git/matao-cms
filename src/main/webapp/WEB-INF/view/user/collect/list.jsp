@@ -17,7 +17,7 @@
         <th>名称</th>
         <th>地址</th>
         <th>创建时间</th>
-        <th>操作    <input type="button" value="添加" onclick="add()">
+        <th>操作  
         </th>
        </tr>
     </thead>
@@ -57,9 +57,7 @@
 		$("#content").load(url);
 	}
 	
-	function add(){
-		$("#content").load("/collect/add")
-	}
+	
 	/**
 	 刷新当前页
 	*/
