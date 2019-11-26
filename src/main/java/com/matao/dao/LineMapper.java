@@ -7,13 +7,13 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.matao.entity.Link;
+import com.matao.entity.Line;
 /**
  * 
  * @author 马涛
  *
  */
-public interface LinkMapper {
+public interface LineMapper {
 
 	/**
 	 * 
@@ -22,14 +22,14 @@ public interface LinkMapper {
 	 */
 	@Insert("INSERT INTO cms_link (url,name,created) "
 			+ " VALUES(#{url},#{name},now())")
-	int add(Link link);
+	int add(Line link);
 	
 	/**
 	 * 
 	 * @return
 	 */
 	@Select("SELECT * FROM cms_link ORDER BY created DESC")
-	List<Link> list();
+	List<Line> list();
 
 	/**
 	 * 
@@ -38,7 +38,7 @@ public interface LinkMapper {
 	 */
 	@Update("UPDATE cms_link set url=#{url},name=#{name} "
 			+ "	WHERE id=#{id}")
-	int  update(Link link);
+	int  update(Line link);
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public interface LinkMapper {
 	 * @return
 	 */
 	@Select("SELECT * FROM cms_link WHERE id=#{value} ")
-	Link get(int id);
+	Line get(int id);
 
 	/**
 	 * 

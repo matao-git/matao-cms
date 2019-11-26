@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.matao.entity.Collect;
+import com.matao.entity.Case;
 
-public interface CollectMapper {
+public interface CaseMapper {
 	
 	/**
 	 * 
@@ -18,7 +18,7 @@ public interface CollectMapper {
 	 */
 	@Insert("INSERT INTO cms_collect (userId,url,name,created) "
 			+ " VALUES(#{userId},#{url},#{name},now())")
-	int add(Collect collect);
+	int add(Case collect);
 	
 	/**
 	 * 
@@ -27,7 +27,7 @@ public interface CollectMapper {
 	@Select("SELECT * FROM cms_collect "
 			+ " WHERE userId=#{userId} "
 			+ " ORDER BY created DESC")
-	List<Collect> list(int userId);
+	List<Case> list(int userId);
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public interface CollectMapper {
 	 */
 	@Update("UPDATE cms_collect set url=#{url},name=#{name} "
 			+ "	WHERE id=#{id}")
-	int  update(Collect collect);
+	int  update(Case collect);
 
 	/**
 	 * 
@@ -44,7 +44,7 @@ public interface CollectMapper {
 	 * @return
 	 */
 	@Select("SELECT * FROM cms_collect WHERE id=#{value} ")
-	Collect get(int id);
+	Case get(int id);
 
 	/**
 	 * 

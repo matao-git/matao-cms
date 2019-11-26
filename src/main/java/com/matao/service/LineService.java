@@ -2,19 +2,19 @@ package com.matao.service;
 
 
 import com.github.pagehelper.PageInfo;
-import com.matao.entity.Link;
+import com.matao.entity.Line;
 
 /**
  * 
  * @author 马涛
  *
  */
-public interface LinkService {
+public interface LineService {
 
-	int add(Link link);
+	int add(Line link);
 	PageInfo list(int page);
 	int delete(int id);
-	Link get(int id);
-	int update( Link link);
+	Line get(int id);
+	int update( Line link);
 
 }

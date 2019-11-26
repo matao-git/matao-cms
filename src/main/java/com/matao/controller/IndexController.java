@@ -18,8 +18,8 @@ import com.matao.entity.Channel;
 import com.matao.service.ArticleService;
 import com.matao.service.CategoryService;
 import com.matao.service.ChannelService;
-import com.matao.service.LinkService;
-import com.matao.entity.Link;
+import com.matao.service.LineService;
+import com.matao.entity.Line;
 
 @Controller
 public class IndexController {
@@ -36,7 +36,7 @@ public class IndexController {
 	private ArticleService articleService;
 	
 	@Autowired
-	LinkService linkService;
+	LineService linkService;
 	
 	/**
 	 * 
@@ -107,8 +107,8 @@ public class IndexController {
 		List<Article> imgArticles = articleService.getImgArticles(10);
 		
 		// 友情链接
-		   PageInfo<Link> info=  linkService.list(1);
-		   List<Link> linkList =  info.getList();
+		   PageInfo<Line> info=  linkService.list(1);
+		   List<Line> linkList =  info.getList();
 		
 		request.setAttribute("hotList", hotList);
 		request.setAttribute("newArticles", newArticles);

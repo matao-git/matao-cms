@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 
 
-public class Link {
+public class Line {
 	
 	int  id;
 	

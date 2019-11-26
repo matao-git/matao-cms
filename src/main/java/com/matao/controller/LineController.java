@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageInfo;
 import com.matao.StringUtils;
 import com.matao.common.MsgResult;
-import com.matao.entity.Link;
-import com.matao.service.LinkService;
+import com.matao.entity.Line;
+import com.matao.service.LineService;
 
 /**
  * 
@@ -26,10 +26,10 @@ import com.matao.service.LinkService;
  */
 @Controller
 @RequestMapping("link")
-public class LinkController {
+public class LineController {
 	
 	@Autowired
-	LinkService linkService;
+	LineService linkService;
 	
 	/**
 	 * 
@@ -54,7 +54,7 @@ public class LinkController {
 	 */
 	@GetMapping("add")
 	public String add(HttpServletRequest request) {
-		request.setAttribute("link", new Link());
+		request.setAttribute("link", new Line());
 		return "admin/link/add";	 
 	}
 	
@@ -86,7 +86,7 @@ public class LinkController {
 	 */
 	@PostMapping("update")
 	public String update(HttpServletRequest request,
-			@Valid  @ModelAttribute("link") Link link,
+			@Valid  @ModelAttribute("link") Line link,
 			BindingResult result
 			) {
 		
@@ -116,7 +116,7 @@ public class LinkController {
 	 */
 	@PostMapping("add")
 	public String add(HttpServletRequest request,
-			@Valid  @ModelAttribute("link") Link link,
+			@Valid  @ModelAttribute("link") Line link,
 			BindingResult result
 			) {
 		

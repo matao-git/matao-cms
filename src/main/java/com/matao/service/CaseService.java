@@ -2,21 +2,21 @@ package com.matao.service;
 
 
 import com.github.pagehelper.PageInfo;
-import com.matao.entity.Collect;
+import com.matao.entity.Case;
 
 /**
  *  收藏
  * @author	马涛
  *
  */
-public interface CollectService {
+public interface CaseService {
 
 	/**
 	 * 
 	 * @param collect
 	 * @return
 	 */
-	int add(Collect collect);
+	int add(Case collect);
 	/**
 	 * 
 	 * @param page
@@ -35,13 +35,13 @@ public interface CollectService {
 	 * @param id
 	 * @return
 	 */
-	Collect get(int id);
+	Case get(int id);
 	
 	/**
 	 * 
 	 * @param collect
 	 * @return
 	 */
-	int update( Collect collect);
+	int update( Case collect);
 
 }

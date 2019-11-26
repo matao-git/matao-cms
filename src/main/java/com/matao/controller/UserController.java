@@ -30,8 +30,8 @@ import com.matao.entity.User;
 import com.matao.service.ArticleService;
 import com.matao.service.ChannelService;
 import com.matao.service.UserService;
-import com.matao.entity.Collect;
-import com.matao.service.CollectService;
+import com.matao.entity.Case;
+import com.matao.service.CaseService;
 import com.matao.entity.Image;
 import com.matao.entity.TypeEnum;
 import com.matao.common.MsgResult;
@@ -57,7 +57,7 @@ public class UserController {
 	ArticleService articleService;
 	
 	@Autowired
-	CollectService collectService;
+	CaseService collectService;
 	
 	@Autowired
 	ChannelService channelService;
@@ -438,7 +438,7 @@ public class UserController {
 	 */
 	@RequestMapping("collect")
 	@ResponseBody
-	public MsgResult collect(HttpServletRequest request, Collect collect) {
+	public MsgResult collect(HttpServletRequest request, Case collect) {
 		
 		//CmsAssert.AssertTrue(id>0, "id 不合法");
 		User loginUser = (User)request.getSession().getAttribute(ConstantClass.USER_KEY);

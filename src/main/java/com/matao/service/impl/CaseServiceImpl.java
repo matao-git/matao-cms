@@ -1,56 +1,55 @@
 package com.matao.service.impl;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.matao.dao.LinkMapper;
-import com.matao.entity.Link;
-import com.matao.service.LinkService;
+import com.matao.dao.CaseMapper;
+import com.matao.entity.Case;
+import com.matao.service.CaseService;
 
 /**
  * 
- * @author 马涛
  *
  */
 @Service
-public class LinkServiceImpl  implements LinkService{
+public class CaseServiceImpl  implements CaseService{
 	
 	@Autowired
-	LinkMapper linkMapper;
+	CaseMapper collectMapper;
 
 	@Override
-	public int add(Link link) {
+	public int add(Case collect) {
 		// TODO Auto-generated method stub
-		return linkMapper.add(link);
+		return collectMapper.add(collect);
 		
 	}
 
 	@Override
-	public PageInfo list(int page) {
+	public PageInfo list(int userId,int page) {
 		// TODO Auto-generated method stub
 		PageHelper.startPage(page,10);
-		
-		return new PageInfo<Link>(linkMapper.list());
+		return new PageInfo<Case>(collectMapper.list(userId));
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return linkMapper.delete(id);
+		return collectMapper.delete(id);
 	}
 
 	@Override
-	public Link get(int id) {
+	public Case get(int id) {
 		// TODO Auto-generated method stub
-		return linkMapper.get(id);
+		return collectMapper.get(id);
 	}
 
 	@Override
-	public int update(Link link) {
+	public int update(Case collect) {
 		// TODO Auto-generated method stub
-		return linkMapper.update(link);
+		return collectMapper.update(collect);
 		
 	}
 

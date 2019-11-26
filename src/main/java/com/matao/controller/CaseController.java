@@ -17,9 +17,9 @@ import com.github.pagehelper.PageInfo;
 import com.matao.StringUtils;
 import com.matao.common.ConstantClass;
 import com.matao.common.MsgResult;
-import com.matao.entity.Collect;
+import com.matao.entity.Case;
 import com.matao.entity.User;
-import com.matao.service.CollectService;
+import com.matao.service.CaseService;
 
 
 /**
@@ -29,10 +29,10 @@ import com.matao.service.CollectService;
  */
 @Controller
 @RequestMapping("collect")
-public class CollectController {
+public class CaseController {
 	
 	@Autowired
-	CollectService collectService;
+	CaseService collectService;
 	
 	/**
 	 * 
@@ -61,7 +61,7 @@ public class CollectController {
 	 */
 	@GetMapping("add")
 	public String add(HttpServletRequest request) {
-		request.setAttribute("collect", new Collect());
+		request.setAttribute("collect", new Case());
 		return "user/collect/add";	 
 	}
 	
@@ -93,7 +93,7 @@ public class CollectController {
 	 */
 	@PostMapping("update")
 	public String update(HttpServletRequest request,
-			@Valid @ModelAttribute("collect") Collect collect,
+			@Valid @ModelAttribute("collect") Case collect,
 			BindingResult result
 			) {
 		

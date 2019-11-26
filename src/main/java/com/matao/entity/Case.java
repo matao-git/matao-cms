@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
  *
  */
 
-public class Collect {
+public class Case {
 	
  private int	id;
  

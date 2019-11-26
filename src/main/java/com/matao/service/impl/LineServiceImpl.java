@@ -1,55 +1,56 @@
 package com.matao.service.impl;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.matao.dao.CollectMapper;
-import com.matao.entity.Collect;
-import com.matao.service.CollectService;
+import com.matao.dao.LineMapper;
+import com.matao.entity.Line;
+import com.matao.service.LineService;
 
 /**
  * 
+ * @author 马涛
  *
  */
 @Service
-public class CollectServiceImpl  implements CollectService{
+public class LineServiceImpl  implements LineService{
 	
 	@Autowired
-	CollectMapper collectMapper;
+	LineMapper linkMapper;
 
 	@Override
-	public int add(Collect collect) {
+	public int add(Line link) {
 		// TODO Auto-generated method stub
-		return collectMapper.add(collect);
+		return linkMapper.add(link);
 		
 	}
 
 	@Override
-	public PageInfo list(int userId,int page) {
+	public PageInfo list(int page) {
 		// TODO Auto-generated method stub
 		PageHelper.startPage(page,10);
-		return new PageInfo<Collect>(collectMapper.list(userId));
+		
+		return new PageInfo<Line>(linkMapper.list());
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return collectMapper.delete(id);
+		return linkMapper.delete(id);
 	}
 
 	@Override
-	public Collect get(int id) {
+	public Line get(int id) {
 		// TODO Auto-generated method stub
-		return collectMapper.get(id);
+		return linkMapper.get(id);
 	}
 
 	@Override
-	public int update(Collect collect) {
+	public int update(Line link) {
 		// TODO Auto-generated method stub
-		return collectMapper.update(collect);
+		return linkMapper.update(link);
 		
 	}
 
